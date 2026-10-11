@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="DARK FILES — classified cases, dark mysteries, hidden truths.">
+<title>DARK FILES — Classified Archive</title>
+<style>
+:root{--bg:#070707;--panel:#101010;--line:#292323;--red:#e50920;--muted:#9b9696;--white:#f4f0ed}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 50% 0%,#3a080d 0,transparent 42%),linear-gradient(180deg,#090909 0%,#050505 100%)}
+.noise{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+header{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,68px);border-bottom:1px solid #ffffff12;background:#080808c9;backdrop-filter:blur(14px);position:sticky;top:0;z-index:10}
+.brand{display:flex;gap:11px;align-items:center;text-decoration:none;color:var(--white);font-weight:900;letter-spacing:.14em;font-size:15px}
+.mark{width:31px;height:36px;border:1px solid #9d1a27;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#24080b,#080808);box-shadow:0 0 20px #e509201b}
+.mark:before{content:"D";font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#f0e7e2}
+.mark:after{content:"";position:absolute;right:-4px;bottom:-4px;width:10px;height:10px;background:var(--red)}
+.nav{display:flex;align-items:center;gap:25px}.nav a{color:#b8b1b1;text-decoration:none;font-size:11px;letter-spacing:.13em;text-transform:uppercase}.nav a:hover{color:white}
+.nav .download{border:1px solid #a81928;padding:11px 15px;color:#fff;background:#b20c1d}
+.hero{max-width:1200px;margin:auto;min-height:540px;padding:92px clamp(20px,7vw,90px) 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.kicker{font-size:10px;letter-spacing:.28em;color:#ff4354;text-transform:uppercase;display:flex;gap:10px;align-items:center}.kicker:before{content:"";height:1px;width:30px;background:var(--red)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(62px,10vw,126px);line-height:.78;letter-spacing:-.075em;margin:26px 0 25px;font-weight:900;text-transform:uppercase}
+h1 span{display:block;color:var(--red);text-shadow:0 0 35px #e5092028}
+.intro{max-width:420px;color:#aaa2a2;line-height:1.8;font-size:13px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 19px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid #383030;color:white;background:#111;cursor:pointer;transition:.2s}
+.btn.primary{background:var(--red);border-color:var(--red)}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px #e5092024}
+.poster{position:relative;min-height:355px;border:1px solid #39272a;background:linear-gradient(140deg,#161212,#080808 58%,#1c0508);overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 25px 80px #000}
+.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.8%,#d50c2018 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,#d50c2018 50%,transparent 50.2%);background-size:42px 42px;mask-image:linear-gradient(black,transparent)}
+.redmoon{position:absolute;top:40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#ed3745,#650811 50%,#180508 72%);filter:blur(.2px);box-shadow:0 0 80px #e5092029}
+.shadow{position:absolute;bottom:0;width:120px;height:240px;background:linear-gradient(#050505,#0a0808);clip-path:polygon(35% 0,65% 0,76% 18%,100% 35%,82% 40%,85% 100%,15% 100%,18% 40%,0 35%,24% 18%);filter:drop-shadow(0 0 12px #000)}
+.stamp{position:absolute;left:20px;top:20px;border:1px solid #bd1828;color:#e43a48;padding:7px 9px;font-size:9px;letter-spacing:.2em;transform:rotate(-5deg)}
+.poster-title{position:absolute;bottom:24px;text-align:center;font-size:10px;letter-spacing:.32em;color:#c5b8b8}
+.poster-title b{display:block;font:900 25px Georgia,serif;color:#eee;margin-bottom:7px;letter-spacing:.1em}
+.poster-title b span{color:var(--red)}
+.meta{display:flex;gap:18px;margin-top:28px;color:#706969;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.meta strong{color:#d7caca;font-weight:700}
+.archive{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0b0b;padding:34px clamp(18px,5vw,68px) 44px}
+.section-head{max-width:1200px;margin:0 auto 22px;display:flex;justify-content:space-between;align-items:end;gap:20px}
+.section-head h2{margin:0;font-size:16px;letter-spacing:.2em;text-transform:uppercase}.section-head p{margin:8px 0 0;color:#766f6f;font-size:11px}
+.counter{color:#ed3344;font-size:10px;letter-spacing:.15em}
+.grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.file{position:relative;min-height:116px;border:1px solid #272020;padding:16px;background:linear-gradient(145deg,#121010,#090909);transition:.2s;overflow:hidden}
+.file:hover{border-color:#8f1724;transform:translateY(-3px);background:#151010}
+.file:after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:.25s}.file:hover:after{width:100%}
+.file small{color:#a9202e;font-size:9px;letter-spacing:.15em}.file h3{font-size:12px;line-height:1.5;margin:12px 0 0;font-weight:700;color:#e6dfdf}
+.bottom{max-width:1200px;margin:auto;padding:26px clamp(18px,5vw,68px);display:flex;justify-content:space-between;gap:20px;align-items:center;color:#696262;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.bottom strong{color:#a8a0a0}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:65px;gap:28px}.poster{min-height:290px}.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){header{height:64px}.nav{gap:12px}.nav a:not(.download){display:none}.nav .download{padding:10px 11px;font-size:9px}.hero{padding-top:54px;min-height:unset}h1{font-size:76px}.poster{min-height:250px}.grid{grid-template-columns:repeat(2,1fr)}.file{min-height:110px;padding:13px}.bottom{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<header>
+  <a class="brand" href="#" aria-label="Dark Files home"><span class="mark"></span><span>DARK FILES</span></a>
+  <nav class="nav"><a href="#archive">The Archive</a><a class="download" id="navDownload" href="#download">Get the App ↗</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <div class="kicker">Classified archive / 18+</div>
+    <h1>DARK<span>FILES</span></h1>
+    <p class="intro">Some cases were never meant to be opened. Enter the archive of dark mysteries, hidden evidence, and stories that stay with you long after the final page.</p>
+    <div class="actions">
+      <a class="btn primary" href="#archive">Explore Files <span>↘</span></a>
+      <a class="btn" id="heroDownload" href="#download">↓ Download App</a>
+    </div>
+    <div class="meta"><span><strong>15</strong> Files</span><span><strong>18+</strong> Archive</span><span><strong>7 / 8</strong> Free / Premium</span></div>
+  </div>
+  <div class="poster" aria-label="Dark Files classified archive artwork">
+    <div class="redmoon"></div><div class="shadow"></div>
+    <div class="stamp">CLASSIFIED • RESTRICTED</div>
+    <div class="poster-title"><b>DARK <span>FILES</span></b>REAL CASES · DARK MYSTERIES · HIDDEN TRUTHS</div>
+  </div>
+</section>
+<section class="archive" id="archive">
+  <div class="section-head"><div><h2>Case Archive</h2><p>Choose a file. Follow the evidence. Question everything.</p></div><div class="counter">15 ENTRIES // RESTRICTED</div></div>
+  <div class="grid" id="files">
+    <article class="file"><small>FILE — 001</small><h3>The Mystery of Sanam Hasan</h3></article>
+    <article class="file"><small>FILE — 002</small><h3>The Echo Chamber</h3></article>
+    <article class="file"><small>FILE — 003</small><h3>They Knew Her Address, Family & Every Move</h3></article>
+    <article class="file"><small>FILE — 004</small><h3>CHAT.EXE</h3></article>
+    <article class="file"><small>FILE — 005</small><h3>MONOL</h3></article>
+    <article class="file"><small>FILE — 006</small><h3>THE DRACONIAN PROTOCOL</h3></article>
+    <article class="file"><small>FILE — 007</small><h3>How Police Caught the King of Darkweb</h3></article>
+    <article class="file"><small>FILE — 008</small><h3>I Went Undercover in an iPhone Scam Group</h3></article>
+    <article class="file"><small>FILE — 009</small><h3>The Music Box That Played at 3:03</h3></article>
+    <article class="file"><small>FILE — 010</small><h3>The Photograph on the Porch</h3></article>
+    <article class="file"><small>FILE — 011</small><h3>Ben & Sarah: The Account That Knew Too Much</h3></article>
+    <article class="file"><small>FILE — 012</small><h3>Lisa’s Last Research Note</h3></article>
+    <article class="file"><small>FILE — 013</small><h3>The Night Shift Ticket</h3></article>
+    <article class="file"><small>FILE — 014</small><h3>Emily Carter and the Exit Page</h3></article>
+    <article class="file"><small>FILE — 015</small><h3>The Collector’s Missing Item</h3></article>
+  </div>
+</section>
+<section id="download" style="text-align:center;padding:48px 20px 58px;background:radial-gradient(ellipse at center,#26080d 0,transparent 65%)">
+  <div class="kicker" style="justify-content:center">Enter the archive</div>
+  <h2 style="font:900 clamp(28px,5vw,42px) Georgia,serif;letter-spacing:-.03em;margin:17px 0 10px">THE FILES ARE WAITING.</h2>
+  <p style="color:#8e8585;font-size:12px;margin:0 0 22px">Read in the dark. Keep the questions.</p>
+  <a class="btn primary" id="downloadBtn" href="#" aria-label="Download Dark Files Android app">↓ Download for Android</a>
+  <div id="downloadNote" style="color:#746a6a;font-size:10px;margin-top:12px">ANDROID APP DOWNLOAD</div>
+</section>
+</main>
+<footer class="bottom"><span>© DARK FILES — CLASSIFIED ARCHIVE</span><span><strong>18+</strong> · Fictional stories and mysteries</span></footer>
+<script>
+/* When your Google Drive share link is ready, replace APK_DOWNLOAD_URL below.
+   Use the file's share link. The link must be accessible to anyone with the link. */
+const APK_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1vdtbzLhm2uhooLzaMQUx27eHbra1tUB3";
+const buttons = [document.getElementById("navDownload"), document.getElementById("heroDownload"), document.getElementById("downloadBtn")];
+const note = document.getElementById("downloadNote");
+if (APK_DOWNLOAD_URL.trim()) {
+  buttons.forEach(btn => { btn.href = APK_DOWNLOAD_URL; btn.target = "_blank"; btn.rel = "noopener noreferrer"; });
+  note.textContent = "ANDROID APP • DOWNLOAD";
+} else {
+  buttons.forEach(btn => btn.addEventListener("click", e => {
+    if (btn.id === "navDownload" || btn.id === "heroDownload" || btn.id === "downloadBtn") {
+      e.preventDefault();
+      document.getElementById("download").scrollIntoView({behavior:"smooth"});
+      note.textContent = "APK LINK WILL BE ADDED WHEN YOU SHARE YOUR GOOGLE DRIVE LINK.";
+    }
+  }));
+}
+</script>
+</body>
+</html>
